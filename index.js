@@ -1,12 +1,11 @@
 const express = require('express');
 const app = express();
 
-// Set port dari environment variable atau default ke 3000
-const port = process.env.PORT || 3000;
+// Gunakan trust proxy jika Anda menjalankan server di belakang proxy (seperti di Replit atau Vercel)
+app.set('trust proxy', true);
 
-// Route untuk /api/whoami
 app.get('/api/whoami', (req, res) => {
-  const ipaddress = req.ip || req.connection.remoteAddress;
+  const ipaddress = req.ip;
   const language = req.headers['accept-language'];
   const software = req.headers['user-agent'];
 
@@ -17,7 +16,7 @@ app.get('/api/whoami', (req, res) => {
   });
 });
 
-// Jalankan server
-app.listen(port, () => {
-  console.log(`Server berjalan di http://localhost:${port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server berjalan di http://localhost:${PORT}`);
 });
