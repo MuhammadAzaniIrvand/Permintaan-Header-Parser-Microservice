@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
 
-// Gunakan trust proxy jika Anda menjalankan server di belakang proxy (seperti di Replit atau Vercel)
+// Supaya IP tetap bisa dibaca meskipun di belakang proxy
 app.set('trust proxy', true);
+
+app.get('/', (req, res) => {
+  res.send('Silakan akses /api/whoami untuk melihat informasi client Anda.');
+});
 
 app.get('/api/whoami', (req, res) => {
   const ipaddress = req.ip;

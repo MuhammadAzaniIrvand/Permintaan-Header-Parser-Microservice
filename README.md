@@ -1,3 +1,15 @@
-# Request Header Parser Microservice
+# 🧠 whoami API
 
-This is the boilerplate for the Request Header Parser Microservice project. Instructions for building your project can be found at https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/request-header-parser-microservice
+API sederhana menggunakan Express.js untuk mengembalikan informasi dasar dari client seperti:
+
+- IP Address
+- Bahasa (language)
+- Software (User Agent)
+
+## 📦 Instalasi
+
+```bash
+git clone https://github.com/username/nama-repo.git
+cd nama-repo
+npm install
+npm start
